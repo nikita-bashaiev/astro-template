@@ -1,0 +1,35 @@
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: 'currentColor';
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
+  /* NEUTRALS */
+  --color-neutral-surface: oklch(1 0 0);
+  --color-neutral-text: oklch(0 0 0);
+
+  /* ACCENTS */
+  --color-accent: oklch(0.8725 0.26 142.5);
+}
+
+.prose {
+  --tw-prose-*: initial;
+  /*--tw-prose-body: var(--color-neutral-body);*/
+  /* --tw-prose-headings: var(--color-neutral-text);
+  --tw-prose-lead: var(--color-neutral-text);
+  --tw-prose-links: var(--color-neutral-text);
+  --tw-prose-bold: var(--color-neutral-text);
+  --tw-prose-counters: var(--color-neutral-550A);
+  --tw-prose-bullets: var(--color-neutral-250A);
+  --tw-prose-hr: var(--color-neutral-100A);
+  --tw-prose-quotes: var(--color-neutral-text);
+  --tw-prose-quote-borders: var(--color-neutral-100A);
+  --tw-prose-captions: var(--color-neutral-550A);
+  --tw-prose-kbd: var(--color-neutral-text);
+  --tw-prose-kbd-shadows: NaN NaN NaN;
+  --tw-prose-code: var(--color-neutral-text);
+  --tw-prose-pre-code: var(--color-neutral-50);
+  --tw-prose-pre-bg: var(--color-neutral-text);
+  --tw-prose-th-borders: var(--color-neutral-250A);
+  --tw-prose-td-borders: var(--color-neutral-100A); */
+}

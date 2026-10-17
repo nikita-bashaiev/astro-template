@@ -1,0 +1,25 @@
+:root {
+  font-synthesis: none;
+}
+
+@theme {
+  /* families */
+  --font-*: initial;
+  --font-sans: var(--font-uncut-sans);
+  --font-display: var(--font-pixels);
+
+  /* tracking */
+  --tracking-*: initial;
+  --tracking-50: 0.005em;
+  --tracking-100: 0.01em;
+  --tracking-150: 0.015em;
+  --tracking-200: 0.02em;
+  --tracking-250: 0.025em;
+  --tracking-300: 0.03em;
+  --tracking-400: 0.04em;
+  --tracking-500: 0.05em;
+
+  /* text widths */
+  --min-width-prose: 30ch;
+  --max-width-prose: 75ch;
+}

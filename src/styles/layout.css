@@ -1,0 +1,25 @@
+:root {
+  --padding-inline: clamp(1.25rem, 5.13vw + (-0.28rem), 3rem);
+  --padding-image: 0.75rem;
+  --max-width-normal: 96rem;
+  --width-normal: calc((var(--max-width-normal) - var(--max-width-prose)) / 2);
+}
+
+@theme {
+  --grid-template-columns-content: [full-start]
+    minmax(calc(var(--padding-inline) - var(--padding-image)), 1fr)
+    [image-start] minmax(var(--padding-image), 1fr) [normal-start]
+    minmax(0, var(--width-normal)) [text-start]
+    min(100% - (var(--padding-inline) * 2), var(--max-width-prose)) [text-end]
+    minmax(0, var(--width-normal)) [normal-end]
+    minmax(var(--padding-image), 1fr) [image-end]
+    minmax(calc(var(--padding-inline) - var(--padding-image)), 1fr) [full-end];
+  --grid-column-full: full;
+  --grid-column-image: image;
+  --grid-column-text: text;
+  --grid-column-normal: normal;
+}
+
+.grid-cols-content > :not(.col-text, .col-full, .col-image) {
+  grid-column: var(--grid-column-normal);
+}

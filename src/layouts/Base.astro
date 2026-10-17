@@ -1,0 +1,65 @@
+---
+import '@styles/base.css';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import { Font } from 'astro:assets';
+import { SEO } from 'astro-seo';
+
+// import Analytics from '@vercel/analytics/astro';
+// import SpeedInsights from '@vercel/speed-insights/astro';
+
+const METADATA = {
+  title: 'Site Title',
+  desc: 'Site desc...',
+};
+---
+
+<html lang='pl'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <!-- <Analytics />
+    <SpeedInsights /> -->
+    <SEO
+      title={METADATA.title}
+      description={METADATA.desc}
+      openGraph={{
+        basic: {
+          title: METADATA.title,
+          type: 'website',
+          image: `https://${process.env.SITE}/og.png`,
+        },
+        image: {
+          alt: METADATA.title,
+        },
+      }}
+      twitter={{
+        creator: '@bashaiev',
+        site: '@bashaiev',
+        card: 'summary_large_image',
+        image: `https://${process.env.SITE}/og.png`,
+        imageAlt: METADATA.title,
+        description: METADATA.desc,
+      }}
+    />
+    <Font cssVariable='--font-uncut-sans' preload />
+  </head>
+  <body class='grid min-h-svh grid-cols-content overflow-x-clip font-sans antialiased text-neutral-text bg-neutral-surface selection:bg-accent'>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  :root {
+    scrollbar-color: black transparent;
+    /* scrollbar-width: thin; */
+  }
+  body {
+    grid-template-rows: auto auto 1fr auto;
+  }
+</style>

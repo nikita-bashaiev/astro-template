@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import './type.css';
+@import './layout.css';
+@import './colors.css';
+
+@custom-variant can-hover (@media (hover: hover));
+
+img {
+  object-fit: cover;
+}
+
+:root {
+  scroll-behavior: auto;
+}

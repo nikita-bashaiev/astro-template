@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes, HTMLTag, Polymorphic } from 'astro/types';
+import { cva, type VariantProps } from 'cva';
+
+const button = cva({
+  base: 'w-fit text-center select-none',
+  variants: {
+    intent: {
+      primary: 'dark:text-surface text-strong bg-accent',
+      secondary: 'bg-strong text-surface',
+    },
+    size: {
+      base: 'px-5 py-3 text-base/5',
+      lg: 'px-6 py-4 text-base/5',
+    },
+  },
+});
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> &
+  VariantProps<typeof button>;
+
+const {
+  as: Tag = 'button',
+  class: className,
+  intent = 'primary',
+  size = 'base',
+  ...props
+} = Astro.props;
+---
+
+<Tag class={button({ intent, size, className })} {...props}>
+  <slot />
+</Tag>
